@@ -1,6 +1,12 @@
 class PhotosController < ApplicationController
   skip_before_action :authenticate_user!, :only => [:index, :show]
   
+  def favorites
+    @photos = current_user.liked_photos
+      
+    render("photos/favorites.html.erb")
+  end
+  
   def index
     @photos = Photo.all
 
@@ -67,5 +73,6 @@ class PhotosController < ApplicationController
     else
       redirect_to(:back, :notice => "Photo deleted.")
     end
+  
   end
 end
