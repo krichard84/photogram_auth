@@ -98,18 +98,18 @@
             </ul>
           <div class="btn-group btn-group-justified">
             
-            <% if current_user.id == @photos.user_id %>
+            <% if current_user.id == the_photo.user_id %>
             
               <a href="/photos" class="btn btn-primary">
                 <i class="fa fa-chevron-left"></i>
               </a>
-              <a href="/photos/<%= @photos.id %>/edit" class="btn btn-warning">
+              <a href="/photos/<%= the_photo.id %>/edit" class="btn btn-warning">
                 <i class="fa fa-edit"></i>
               </a>
-            <a href="/delete_photo/<%= @photos.id %>" class="btn btn-danger" rel="nofollow">
+            <a href="/delete_photo/<%= the_photo.id %>" class="btn btn-danger" rel="nofollow">
               <i class="fa fa-trash-o"></i>
             </a>
-            <% if %>
+            <% else %>
             
             <a href="/photos" class="btn btn-primary">
                 <i class="fa fa-chevron-left"></i>
