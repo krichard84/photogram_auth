@@ -50,7 +50,7 @@
             
             <ul class="media-list">
               
-            <% @comments.each do |the_comment| %>
+            <% Comment.where(:photo_id => the_photo.id).each do |the_comment| %>
                 
                 <li class="media">
                   <div class="media-body">
@@ -73,7 +73,7 @@
                       
                         <input type="hidden" name="photo_id" value="<%= the_photo.id %>">
                         
-                        <input type="hidden" name="user_id" value="<%= @user.id %>">
+                        <input type="hidden" name="user_id" value="<%= current_user.id %>">
                       
                         <!-- Label and input for body -->
                         <div class="form-group">
