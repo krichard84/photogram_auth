@@ -12,6 +12,9 @@ class UsersController < ApplicationController
     # @photos = Photo.where(:user_id => @user.id)
     
     @photos = @user.photos
+    @likes = @user.likes
+    @comments = @user.comments
+    
     render("users/show.html.erb")
   end
 end    
