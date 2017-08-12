@@ -1,9 +1,10 @@
 class PhotosController < ApplicationController
-  skip_before_action :authenticate_user!, :only => [:index, :show]
   
   def favorites
     @photos = current_user.liked_photos
-      
+    @user_id = current_user.id
+    @user_username = current_user.username
+    
     render("photos/favorites.html.erb")
   end
   
