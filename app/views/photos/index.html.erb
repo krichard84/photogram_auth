@@ -61,6 +61,8 @@
               
             <% Comment.where(:photo_id => the_photo.id).each do |the_comment| %>
                 
+                <input type="hidden" placeholder="Add a comment...">
+                
                 <li class="media">
                   <div class="media-body">
                     <h6 class="media-heading">
